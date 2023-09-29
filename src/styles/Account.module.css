@@ -1,0 +1,64 @@
+.account_wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 30%;
+  height: 3rem;
+}
+
+.connect{
+  background:  linear-gradient(95deg,var(--bleu) -5%, #DB2180 100%, #EA1D78 110%, var(--pink) 140%);
+  height: 3rem;
+  width:15rem;
+}
+
+.account{
+  background: black;
+  border: solid 0.5px rgb(99,99,99,0.6);
+  width:15rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.iconContainer {
+  position: relative;
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+}
+
+.checkIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff; /* change color as needed */
+  z-index: 10;
+}
+
+.grayFilter {
+  filter: grayscale(100%);
+}
+
+.menu_open{
+  background-color: black;
+  border: solid 0.5px rgb(99,99,99,0.6);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top:4.8rem;
+  width: 15rem;
+  height: 6rem;
+  z-index: 2;
+}
+
+.menu_close{
+  display: none;
+}

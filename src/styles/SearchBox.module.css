@@ -1,0 +1,51 @@
+.input {
+    height: 3rem;
+    padding: 1rem !important;
+    width: 100%;
+    border: 0.5px solid rgb(99,99,99,0.6);
+    border-radius: 10px;
+    background-color: black;
+    text-align: center !important;
+  }
+  
+  .list {
+    display: block;
+    position: relative;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 0.5px solid rgb(99,99,99,0.6);
+    border-radius: 10px;
+    overflow-y: auto;
+    background-color: black;
+    z-index: 3;
+  }
+
+  .list_empty{
+    display: none;
+  }
+  
+  .listed {
+    padding: 10px;
+    cursor: pointer;
+    
+  }
+  
+  .listed:hover,.listed:active,.listed:focus {
+   border: solid 0.5px var(--bleu);
+  }
+  
+  .button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-align: left;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .button:hover,.button:active,.button:focus {
+    outline: none;
+  }
+  

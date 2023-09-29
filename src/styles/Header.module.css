@@ -1,0 +1,147 @@
+
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    
+      margin: 0.2rem
+    }
+
+    .navbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width:30%;
+      padding-right: 5rem;
+
+    }
+
+  
+    .homeButton{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items : center;
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .tokensButton{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 4rem;
+      height: 4rem;
+      margin: 5px;
+    }
+
+    @media (max-width: 34rem) {
+      .homeButton{
+     width: 3rem !important;
+     height: 3rem !important;
+      }
+     }
+
+    .searchbox_wrapper {
+      width: 30% ;
+      height: 3rem;
+      display: inline-block;
+      overflow: visible;
+    }
+    
+
+
+  .modal {
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    height: 50%;
+    width: 40%;
+    margin-right:-50%;
+    transform:  translate(-50%, -50%);
+  }
+
+
+  .modalContainer{
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    border: 0.5px solid rgba(99, 99, 99, 0.6);
+    background-color: black;
+    width: 100%;
+    height: 24rem;
+    padding: 1rem 0rem 1rem 0rem;
+  }
+  .modalHeader{
+    margin: 1rem;
+  }
+
+  .modalCard {
+    border: 0.5px solid rgba(99, 99, 99, 0.6);
+    width: 50%;
+    height: 4rem;
+    border-radius: 10px;
+  }
+
+  .modalCard:hover,.modalCard:active,.modalCard:focus {
+    border: 0.5px solid var(--bleu);
+
+  }
+  
+
+  .modalLink {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
+  .modalButton {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 0;
+  }
+
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0,0,0,0.8);
+    z-index: 3;
+  }
+
+
+
+
+  @media (max-width: 62rem) {
+    .modal {
+      z-index: 3;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      right: auto;
+      bottom: auto;
+      height: 50%;
+      width: 80%;
+      margin-right:-50%;
+      transform:  translate(-50%, -50%);
+    }
+}
+

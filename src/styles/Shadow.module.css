@@ -1,0 +1,34 @@
+.shadow_wrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.shadow_wrapper_hover{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+
+.shadow {
+    background: radial-gradient(
+     1650% 333% at 95% -42%,
+      #000d5476 0%,
+      #d600597c 99.99%,
+      #00000064 100%
+    );
+    filter: blur(30px);
+    border-radius: 10px;
+    position: absolute;
+    z-index:0;
+  }
+
+
+  .hover:hover .shadow,.hover:active .shadow,.hover:focus .shadow {
+    opacity: 1;
+}

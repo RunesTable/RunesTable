@@ -1,0 +1,216 @@
+.connect{
+    background:  linear-gradient(95deg,var(--bleu) -5%, #DB2180 100%, #EA1D78 110%, var(--pink) 140%);
+    height: 3rem;
+    width:15rem;
+  }
+
+  .inscribe{
+    padding: 2rem 0rem 2rem 0rem;
+    z-index: 1;
+    border: solid 0.5px rgb(99,99,99,0.6);
+    background-color: black;
+    border-radius: 10px;
+    margin: 0.2rem;
+    width: 60%;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title{
+    width: 80%;
+    font-size: 18px;
+    margin-bottom:1rem;
+}
+.subTitle{
+  width: 80%;
+    font-size: 14px;
+    margin: 1rem;
+}
+
+.section{
+  width: 90%;
+  height: 9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border: solid 0.5px rgb(99,99,99,0.6);
+  border-radius: 10px;
+
+}
+
+.column{
+  width: 40%;
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+
+}
+.columnTitle{
+  width: 25%;
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  text-align:right;
+
+}
+
+.brc{
+
+  width: 23%;
+  height: 9rem;
+  text-align:justify;
+  word-wrap:break-word;
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  line-height: 1.5rem;
+  overflow: scroll;
+
+}
+
+.input{
+    border: solid 0.5px rgb(99,99,99,0.6) !important;
+    background-color: black !important;
+    border-radius: 7px;
+    height: 2rem;
+    width: 100%;
+    text-align: center !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.fees{
+  padding: 1.5rem;
+  width: 20%;
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.fee{
+  font-size: 18px;
+}
+
+.feesInputs{
+  width: 80%;
+  height: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.feesCarrousel{
+  width: 90%;
+  height: 9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.feesCard{
+  width: 25%;
+  margin-top: 0.5rem;
+  height: 7rem;
+  border: solid 0.5px rgb(99,99,99,0.6);
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+.feesSubsection{
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.feesSubsection input[type="range"]{
+  width: 80%;
+}
+
+.error{
+  color: red;
+   text-align: center;
+   margin: 1rem 1rem 0rem 1rem;
+}
+
+.load{
+   text-align: center;
+   margin: 1rem 1rem 0rem 1rem;
+}
+
+.button{
+   margin-top: 2rem;
+    border-radius: 10px;
+    height: 2.5rem;
+    width:60%;
+    background: linear-gradient(95deg,var(--bleu) -5%, #DB2180 100%, #EA1D78 110%, var(--pink) 140%);
+    border-radius: 10px;
+}
+
+
+@media (max-width: 72rem) {
+ 
+
+  .inscribe{
+
+    width: 70%;
+  }  
+
+  @media (max-width: 66rem) {
+
+    .inscribe{
+  
+      width: 80%;
+    }
+
+    @media (max-width: 60rem) {
+
+      .inscribe{
+    
+        width: 90%;
+      }
+
+  @media (max-width: 46rem) {
+
+    .inscribe{
+  
+      width: 100%;
+    }
+  
+  
+    @media (max-width: 35rem) {
+      .title{
+        font-size: 14px;
+        margin-bottom:0.5rem;
+    }
+    .subTitle{
+        font-size: 10px;
+        margin: 0.5rem;
+    }
+    .fee{
+      font-size: 14px;
+    }
+    
+    }
+  } 
+}
+  }
+}
+
+

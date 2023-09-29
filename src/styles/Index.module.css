@@ -1,0 +1,126 @@
+.chart{
+    height: 70vh;
+    width: 100%;
+}
+.chartContainer{
+    height: 70vh;
+    width: 60%;
+
+}
+.title, .volume, .price{
+    display: block;
+    position: relative;
+	z-index:1;
+}
+
+.title{
+    font-size: 1.5rem;
+    top:-8rem;
+    left:-6rem;
+}
+.price{
+    font-size: 1.2rem;
+    top:-4rem;
+    left:-6rem;
+}
+.volume{
+    font-size: 1.2rem;
+    top:-5.6rem;
+    left:2rem;
+}
+
+
+.carrousel_wrapper{
+    width: 100%;
+    overflow: hidden;
+}
+
+.carrousel{
+    margin: 6rem 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6rem;
+    width: 85%;
+
+}
+
+@media (max-width: 75rem) {
+    .carrousel_wrapper{
+        width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    
+    .carrousel{
+        justify-content: flex-start;
+    }
+}
+
+
+@media (max-width: 62rem) {
+ 
+    .chart{
+        height: 60vh;
+        width: 100%;
+    }
+    .chartContainer{
+        height: 50vh;
+        width: 100%;
+    
+    }
+    .title{
+        font-size: 1.2rem;
+        top:-8rem;
+        left:3rem;
+    }
+    .price{
+        font-size: 0.9rem;
+        top:-4rem;
+        left:3rem;
+    }
+    .volume{
+        font-size: 0.9rem;
+        top:-5.2rem;
+        left:9rem;
+    }
+    @media (max-width: 35rem) {
+        .chart{
+            height: 50vh;
+            width: 100%;
+        }
+        .chartContainer{
+            height: 40vh;
+            width: 100%;
+        
+        }
+        .title{
+            font-size: 1.2rem;
+            top:-12rem;
+            left:1rem;
+        }
+        .price{
+            font-size: 0.9rem;
+            top:-8rem;
+            left:1rem;
+        }
+        .volume{
+            font-size: 0.9rem;
+            top:-9.1rem;
+            left:7rem;
+        }
+        .table{
+            margin: 4rem;
+        }
+
+}
+}

@@ -1,0 +1,5 @@
+.connect{
+    background:  linear-gradient(95deg,var(--bleu) -5%, #DB2180 100%, #EA1D78 110%, var(--pink) 140%);
+    height: 3rem;
+    width:15rem;
+  }
