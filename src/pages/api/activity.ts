@@ -1,8 +1,9 @@
 // pages/api/users.js
 import { MongoClient } from 'mongodb';
 
-const uri = "mongodb+srv://simoncherel:Toshiba924@cluster0.zx1viyd.mongodb.net/?retryWrites=true&w=majority";
-const dbName = 'runesDB';
+const uri = process.env.MONGO_URI?process.env.MONGO_URI:"";
+const dbName = process.env.MONGO_DB_NAME?process.env.MONGO_DB_NAME:"";
+const slowCollection=process.env.MONGO_SLOW_COLLECTION?process.env.MONGO_SLOW_COLLECTION:"";
 
 const client = new MongoClient(uri);
 
@@ -11,7 +12,7 @@ export default async (req:any, res:any) => {
   try {
     await client.connect();
     const db = client.db(dbName);
-    const runesCollection = db.collection('runesTxSlow');
+    const runesCollection = db.collection(slowCollection);
     const transactions = await runesCollection.find().toArray();
     res.status(200).json(transactions);
   } catch (error:any) {
