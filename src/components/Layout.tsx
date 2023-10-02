@@ -17,7 +17,7 @@ export default function Layout({children}:{children:any}) {
     <Head>
       <title>RunesTable</title> 
       <meta name="description" content="RunesTable is an runes trading platform" />
-      <link rel="icon" href={"/bitcolor_logo.png"}/>
+      <link rel="icon" href={"/runestable_logo.png"}/>
     </Head>
     
     <BitcoinContextProvider>

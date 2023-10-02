@@ -31,10 +31,10 @@ export default function Header() {
         <Link href="/">
           <Image
             className={styles.homeButton}
-            src={"/bitcolor_logo.png"}
+            src={"/runestable_logo.png"}
             alt="page logo"
-            width={128}
-            height={128}
+            width={512}
+            height={512}
           />
         </Link>
         <Link href="/token" className={styles.tokensButton}>
