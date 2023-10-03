@@ -1,25 +1,30 @@
-// pages/api/users.js
-import { MongoClient } from 'mongodb';
+import axios from 'axios';
 
-const uri = process.env.MONGO_URI?process.env.MONGO_URI:"";
-const dbName = process.env.MONGO_DB_NAME?process.env.MONGO_DB_NAME:"";
-const collection=process.env.MONGO_SLOW_COLLECTION?process.env.MONGO_SLOW_COLLECTION:"";
-const progress=process.env.MONGO_SLOW_PROGRESS?process.env.MONGO_SLOW_PROGRESS:"";
+const mongoApiEndpoint = process.env.MONGO_API_ENDPOINT?process.env.MONGO_API_ENDPOINT:"";
+const mongoApiKey = process.env.MONGO_API_KEY?process.env.MONGO_API_KEY:"";
+const mongoCluster = process.env.MONGO_CLUSTER?process.env.MONGO_CLUSTER:"";
+const mongoDbName = process.env.MONGO_DB_NAME?process.env.MONGO_DB_NAME:"";
+const slowCollection = process.env.MONGO_SLOW_COLLECTION?process.env.MONGO_SLOW_COLLECTION:"";
 
-const client = new MongoClient(uri);
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default async (req:any, res:any) => {
   try {
-    await client.connect();
-    const db = client.db(dbName);
-    const runesTxCollection = db.collection(collection);
-    const transactions = await runesTxCollection.find().toArray();
-    res.status(200).json(transactions);
+    const url = `${mongoApiEndpoint}/find`;
+    const headers = {
+      "apiKey": `${mongoApiKey}`,
+      'Content-Type': 'application/ejson',
+      "Accept": "application/json",
+    };
+    const data = {
+      "dataSource": `${mongoCluster}`,
+      "database": `${mongoDbName}`,
+      "collection": `${slowCollection}`,
+    };
+    const response = await axios.post(url, data, { headers: headers });
+    const activity=response.data.documents;
+    res.status(200).json(activity);
   } catch (error:any) {
     res.status(500).json({ error: error.message });
-  } finally {
-    await client.close();
-  }
+  } 
 };
 

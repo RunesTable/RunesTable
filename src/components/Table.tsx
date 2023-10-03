@@ -61,7 +61,7 @@ useEffect(() => {
     async function fetchTransactions() {
       const response = await fetch('/api/activity');
       const data = await response.json();
-
+      console.log(data)
       setTransactions(Array.isArray(data) ? data : []);
       
     }
