@@ -4,7 +4,7 @@ import { WalletContext } from '@/functions/WalletContext';
 import Chart from '@/components/Chart';
 import styles from "@/styles/Index.module.css"
 import CardChart from '@/components/CardChart';
-import Table from '@/components/Table';
+import TableToken from '@/components/TableToken';
 import Shadow from '@/components/Shadow';
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
 
 
     <Shadow width={100} height={40} hover={false}>
-    <Table/>
+    <TableToken/>
     </Shadow>
 
   </>

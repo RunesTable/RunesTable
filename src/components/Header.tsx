@@ -44,6 +44,11 @@ export default function Header() {
         <Link href="/activity" className={styles.tokensButton}>
           Activity
         </Link>
+
+
+        <Link href="/transaction" className={styles.tokensButton}>
+          Transactions
+        </Link>
       </div>
 
   

@@ -1,10 +1,11 @@
 import React,{useState, useEffect, useContext} from 'react'
-import styles from "@/styles/Table.module.css"
+import styles from "@/styles/TableToken.module.css"
 import {Token, FirebaseContext } from '@/functions/FirebaseContext';
 import { useRouter } from 'next/router';
 
 
-export default function Table() {
+export default function TableToken() {
+    const [page, setPage] = useState(1);
   const [windowSize, setWindowSize] = useState({
     width: 0,
     height: 0
@@ -37,8 +38,6 @@ useEffect(() => {
     setRowWidth(windowSize.width/28)
   }
 
-
-    console.log(windowSize)
  },[windowSize])
 
 
@@ -47,6 +46,7 @@ useEffect(() => {
   const router = useRouter();
 
   function shortenString(str:any, startChars:any, endChars:any, maxLength:any) {
+    if(!str) return "";
     if (str.length <= maxLength) return str;
     
     const start = str.substr(0, startChars);
@@ -59,21 +59,20 @@ useEffect(() => {
 
   useEffect(() => {
     async function fetchTransactions() {
-      const response = await fetch('/api/activity');
+      const response = await fetch(`/api/token?page=${page}`);
       const data = await response.json();
-      console.log(data)
-      setTransactions(Array.isArray(data) ? data : []);
+      transactions.length>0?setTransactions([...transactions, ...data]):setTransactions(Array.isArray(data) ? data : []);
+      
       
     }
 
     fetchTransactions();
-  }, []);
+  }, [page]);
 
   async function handleScroll(event:any) {
   
     if (Math.abs(event.target.scrollHeight - event.target.clientHeight - event.target.scrollTop) < 2) {
-      console.log("sroll")
-      // updateToken();
+      setPage(page+1);
     }
   }
   
@@ -84,11 +83,11 @@ useEffect(() => {
     <thead className={styles.table_head}>
       <tr className={ styles.row}>
         <th className={styles.column1}scope="col">Index</th>
-        <th className={styles.column2}scope="col">TxId</th>
-        <th className={styles.column3}scope="col">Block</th>
-        <th className={styles.column4}scope="col">Position in the Block</th>
-        <th className={styles.column5}scope="col">Date</th>
-        <th className={styles.column6}scope="col">Data</th>
+        <th className={styles.column2}scope="col">Symbole</th>
+        <th className={styles.column3}scope="col">Amount</th>
+        <th className={styles.column4}scope="col">Decimal</th>
+        <th className={styles.column5}scope="col">TxId</th>
+        <th className={styles.column6}scope="col">Vout</th>
       </tr>
     </thead>
     <tbody  className={styles.table_body}>
@@ -97,12 +96,12 @@ useEffect(() => {
 
       return (
       <tr key={index} className={styles.row}>
-        <td className={styles.column1}>{index}</td>
-        <td className={styles.column2}> <a href={url+tx.txid} target="_blank">{shortenString(tx.txid, rowWidth/2, rowWidth/2, rowWidth)}</a> </td>
-        <td className={styles.column3}>{tx.block}</td>
-        <td className={styles.column4}>{tx.position}</td>
-        <td className={styles.column5}>{tx.date}</td>
-        <td className={styles.column6}>  {shortenString(tx.data,rowWidth/2, rowWidth/2, rowWidth)}</td>
+        <td className={styles.column1}>{tx._id}</td>
+        <td className={styles.column2}> {tx.symbole}</td>
+        <td className={styles.column3}>{tx.amount}</td>
+        <td className={styles.column4}>{tx.decimal}</td>
+        <td className={styles.column5}> <a href={url+tx.txid} target="_blank">{shortenString(tx.txid, rowWidth/2, rowWidth/2, rowWidth)}</a></td>
+        <td className={styles.column6}>  {tx.vout}</td>
          
 
          

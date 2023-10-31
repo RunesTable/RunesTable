@@ -1,5 +1,5 @@
 import React,{useState, useEffect, useContext} from 'react'
-import TableActivity from '@/components/TableActivity'
+import TableRawTx from '@/components/TableRawTx'
 import Shadow from '@/components/Shadow'
 export default function Board() {
 
@@ -7,7 +7,7 @@ export default function Board() {
   return (
 
       <Shadow width={100} height={90} hover={false}>
-      <TableActivity/>
+      <TableRawTx/>
       </Shadow>
 
   )

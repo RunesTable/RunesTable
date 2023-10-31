@@ -4,11 +4,14 @@ const mongoApiEndpoint = process.env.MONGO_API_ENDPOINT?process.env.MONGO_API_EN
 const mongoApiKey = process.env.MONGO_API_KEY?process.env.MONGO_API_KEY:"";
 const mongoCluster = process.env.MONGO_CLUSTER?process.env.MONGO_CLUSTER:"";
 const mongoDbName = process.env.MONGO_DB_NAME?process.env.MONGO_DB_NAME:"";
-const slowProgress = process.env.MONGO_SLOW_PROGRESS?process.env.MONGO_SLOW_PROGRESS:"";
+const slowTx = process.env.MONGO_SLOW_TX?process.env.MONGO_SLOW_TX:"";
 
 
 export default async (req:any, res:any) => {
   try {
+    let page=req.query.page?req.query.page:1;
+    let pageSize=req.query.pageSize?req.query.pageSize:20;
+    let skip=(page-1)*pageSize;
     const url = `${mongoApiEndpoint}/find`;
     const headers = {
       "apiKey": `${mongoApiKey}`,
@@ -18,11 +21,13 @@ export default async (req:any, res:any) => {
     const data = {
       "dataSource": `${mongoCluster}`,
       "database": `${mongoDbName}`,
-      "collection": `${slowProgress}`,
+      "collection": `${slowTx}`,
+      "skip": skip,  
+      "limit": pageSize,
     };
     const response = await axios.post(url, data, { headers: headers });
-    const cursor=response.data.documents;
-    res.status(200).json(cursor);
+    const activity=response.data.documents;
+    res.status(200).json(activity);
   } catch (error:any) {
     res.status(500).json({ error: error.message });
   } 
