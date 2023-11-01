@@ -25,7 +25,6 @@ export default async (req:any, res:any) => {
       "skip": skip,  
       "limit": pageSize,
     };
-    console.log(operation)
     const response = await axios.post(url, data, { headers: headers });
     const activity=response.data.documents;
     res.status(200).json(activity);
