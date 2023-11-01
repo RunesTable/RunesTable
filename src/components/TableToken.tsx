@@ -76,6 +76,7 @@ useEffect(() => {
     }
   }
   
+  
   return (
   
     <div className={styles.table_wrapper} onScroll={handleScroll}>

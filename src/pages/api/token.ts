@@ -8,6 +8,7 @@ const token = process.env.MONGO_TOKEN?process.env.MONGO_TOKEN:"";
 
 
 export default async (req:any, res:any) => {
+
   try {
     let page=req.query.page?req.query.page:1;
     let pageSize=req.query.pageSize?req.query.pageSize:20;
