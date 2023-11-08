@@ -1,11 +1,34 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
+
+
 module.exports = {
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'], // adjust this path as per your directory structure
-  darkMode: false, // or 'media' or 'class'
+  important:true,
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
-    extend: {},
+    extend:{
+      objectFit: ['contain'],
+      colors: {
+        'b-p-grad': 'linear-gradient(90deg, blue, pink)',
+      },
   },
+},
   variants: {},
-  plugins: [],
+  plugins: [
+    // Add the 'important' plugin
+    require('tailwindcss-important')(),
+    plugin(function({ addBase, theme }) {
+      addBase({
+        'h1': { fontSize: theme('fontSize.2xl') },
+        'h2': { fontSize: theme('fontSize.xl') },
+        'h3': { fontSize: theme('fontSize.lg') },
+      })
+    }),
+  ],
 }
 
+ 

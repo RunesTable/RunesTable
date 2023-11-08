@@ -1,6 +1,3 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
 
 
 html,body {
@@ -14,9 +11,6 @@ html,body {
   --pink:#D6005A;
   --darkpink:#4603338f;
   --black:#000000;
-
-
-
 }
 
 
@@ -160,4 +154,19 @@ button{
 
 .react-search-box-dropdown-list-item {
   background-color: black !important; 
+}
+
+.CircleLoading{
+  color: hsla(0,0%,100%,.7);
+  animation: CircleLoading_spin 1s linear infinite;
+  height: 1.25rem;
+  width: 1.25rem;}
+
+  @keyframes CircleLoading_spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

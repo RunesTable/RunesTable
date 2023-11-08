@@ -2,7 +2,7 @@ import React,{useState, useEffect, useContext} from 'react'
 import styles from "@/styles/TableToken.module.css"
 import {Token, FirebaseContext } from '@/functions/FirebaseContext';
 import { useRouter } from 'next/router';
-
+import Loader from './Loader';
 
 export default function TableToken() {
     const [page, setPage] = useState(1);
@@ -93,7 +93,7 @@ useEffect(() => {
     </thead>
     <tbody  className={styles.table_body}>
 
-    {(!transactions || transactions.length === 0) ? <tr className={styles.row}><td colSpan={6}>Loading</td></tr> : transactions.map((tx:any, index) => {
+    {(!transactions || transactions.length === 0) ? <tr className={styles.row}><td className={styles.column5}><Loader/></td></tr> : transactions.map((tx:any, index) => {
 
       return (
       <tr key={index} className={styles.row}>

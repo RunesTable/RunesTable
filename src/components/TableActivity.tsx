@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import styles from "@/styles/TableActivity.module.css";
 import { Token, FirebaseContext } from '@/functions/FirebaseContext';
 import { useRouter } from 'next/router';
+import Loader from './Loader';
 
 export default function TableActivity() {
   const [page, setPage] = useState(1);
@@ -116,7 +117,8 @@ export default function TableActivity() {
         <tbody className={styles.table_body}>
           {(!transactions || transactions.length === 0) ? (
             <tr className={styles.row}>
-              <td colSpan={6}>Loading</td>
+              <td className={styles.column6}><Loader/></td>
+   
             </tr>
           ) : (
             transactions.map((tx: any, index) => (
