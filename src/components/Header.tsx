@@ -26,7 +26,7 @@ export default function Header() {
 
 
   return (
-    <div className={styles.header}>
+    <div className="bg-red-600">
       <div className={styles.navbar}>
         <Link href="/">
           <Image
@@ -49,6 +49,8 @@ export default function Header() {
         <Link href="/transaction" className={styles.tokensButton}>
           Transactions
         </Link>
+
+        <Account/>
       </div>
 
   
